@@ -34,13 +34,5 @@ namespace Remide.Me.Server.Controllers
 
             return Ok(locations);
         }
-
-        /*[HttpGet]
-        public async Task<IHttpActionResult> GetLocations(GetLocationsRequest request)
-        {
-            List<Location> locations = await locationStorageProvider.GetLocations(request.UserID);
-
-            return Ok(locations);
-        }*/
     }
 }

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Remide.Me.Business.Entities;
 using Remide.Me.DataAccess.Infrastructure;
 using Remide.Me.DataAccess.Redis.Configuration;
+
 using StackExchange.Redis;
 
 namespace Remide.Me.DataAccess.Redis
@@ -18,13 +19,13 @@ namespace Remide.Me.DataAccess.Redis
             this.redisConfiguration = redisConfiguration;
         }
 
-        public async Task Save(string userGUID, List<Location> locations)
+        public async Task Save(string userID, List<Location> locations)
         {
             using (var redisConnection = ConnectionMultiplexer.Connect(redisConfiguration.ConnectionString))
             {
                 IDatabase database = redisConnection.GetDatabase(redisConfiguration.Database);
 
-                string key = KeyProvider.GetUserLocationsKey(userGUID);
+                string key = KeyProvider.GetUserLocationsKey(userID);
 
                 await database.ListRightPushAsync(key, locations.Select(c=> (RedisValue)Jil.JSON.Serialize(c)).ToArray());
             }
