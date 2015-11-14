@@ -6,17 +6,18 @@ using Remide.Me.Server.Insractructure.Requests;
 
 namespace Remide.Me.Server.Controllers
 {
-    public class LocationController : ApiController
+    public class LocationsController : ApiController
     {
         private readonly ILocationStorageProvider locationStorageProvider;
 
-        public LocationController(ILocationStorageProvider locationStorageProvider)
+        public LocationsController(ILocationStorageProvider locationStorageProvider)
         {
             this.locationStorageProvider = locationStorageProvider;
         }
 
         [HttpPost]
-        public async Task<IHttpActionResult> AddLocations(AddLocationsRequest request)
+        [ActionName("update")]
+        public async Task<IHttpActionResult> UpdateLocations(AddLocationsRequest request)
         {
             await locationStorageProvider.Save(request.UserID, request.Locations);
 
