@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Http;
 
-using Remide.Me.Business.Entities;
 using Remide.Me.DataAccess.Infrastructure;
 using Remide.Me.Server.Insractructure.Requests;
 
@@ -21,13 +18,17 @@ namespace Remide.Me.Server.Controllers
         [HttpPost]
         public async Task<IHttpActionResult> AddLocations(AddLocationsRequest request)
         {
-            throw new NotImplementedException();
+            await locationStorageProvider.Save(request.UserID, request.Locations);
+
+            return Ok();
         }
 
         [HttpGet]
-        public async Task<IHttpActionResult> GetNearestLocations()
+        public async Task<IHttpActionResult> GetLocations(GetLocationsRequest request)
         {
-            throw new NotImplementedException();
+            await locationStorageProvider.GetLocations(request.UserID);
+
+            return Ok();
         }
     }
 }

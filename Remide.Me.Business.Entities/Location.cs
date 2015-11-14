@@ -4,7 +4,7 @@ namespace Remide.Me.Business.Entities
 {
     public class Location
     {
-        public int ID { get; set; }
+        public string ID { get; set; }
 
         public double Latitude { get; set; }
 
@@ -12,11 +12,11 @@ namespace Remide.Me.Business.Entities
 
         public double Radius { get; set; }
 
-        public List<LocationData> Data { get; set; }
+        public List<Data> Data { get; set; }
 
         public Location()
         {
-            Data = new List<LocationData>();
+            Data = new List<Data>();
         }
     }
 }

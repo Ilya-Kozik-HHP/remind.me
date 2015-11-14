@@ -40,14 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Requests\GetNearestLocationsRequest.cs" />
     <Compile Include="Requests\AddLocationsRequest.cs" />
+    <Compile Include="Requests\GetLocationsRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Remide.Me.Business.Entities\Remide.Me.Business.Entities.csproj">
       <Project>{AFD82E58-BF7A-4E2B-8EEB-B8CFAC949852}</Project>
       <Name>Remide.Me.Business.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Responses\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
