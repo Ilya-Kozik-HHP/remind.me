@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remide.Me.Business.Entities", "Remide.Me.Business.Entities\Remide.Me.Business.Entities.csproj", "{AFD82E58-BF7A-4E2B-8EEB-B8CFAC949852}"
 EndProject
@@ -13,13 +13,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remide.Me.Server", "Remide.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{3CF22ED8-9E67-4634-A4D3-5C9D9EC037AC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{D7572ED7-8582-4ED0-AC37-A28F43D25689}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remide.Me.DataAccess.Infrastructure", "Remide.Me.DataAccess.Infrastructure\Remide.Me.DataAccess.Infrastructure.csproj", "{6A684042-607C-4268-B8A8-41A07BB44B9F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remide.Me.DataAccess.Redis", "Remide.Me.DataAccess.Redis\Remide.Me.DataAccess.Redis.csproj", "{160D4CBE-9148-4C62-B7FD-647C38C3F42F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remide.Me.Server.Insractructure", "Remide.Me.Server.Insractructure\Remide.Me.Server.Insractructure.csproj", "{2E81B6ED-9F9B-4DBF-9509-4DEF4B6DFB6D}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web", "Web\", "{33BCFB62-B388-4CF1-8DE9-31BFD442B542}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57354"
+		Debug.AspNetCompiler.PhysicalPath = "Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57354\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57354"
+		Release.AspNetCompiler.PhysicalPath = "Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57354\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57354"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,18 +47,10 @@ Global
 		{9B0A6C38-CA39-4CB8-9B51-BCF57AF4065F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B0A6C38-CA39-4CB8-9B51-BCF57AF4065F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B0A6C38-CA39-4CB8-9B51-BCF57AF4065F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A684042-607C-4268-B8A8-41A07BB44B9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A684042-607C-4268-B8A8-41A07BB44B9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A684042-607C-4268-B8A8-41A07BB44B9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A684042-607C-4268-B8A8-41A07BB44B9F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{160D4CBE-9148-4C62-B7FD-647C38C3F42F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{160D4CBE-9148-4C62-B7FD-647C38C3F42F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{160D4CBE-9148-4C62-B7FD-647C38C3F42F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{160D4CBE-9148-4C62-B7FD-647C38C3F42F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2E81B6ED-9F9B-4DBF-9509-4DEF4B6DFB6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E81B6ED-9F9B-4DBF-9509-4DEF4B6DFB6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E81B6ED-9F9B-4DBF-9509-4DEF4B6DFB6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E81B6ED-9F9B-4DBF-9509-4DEF4B6DFB6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33BCFB62-B388-4CF1-8DE9-31BFD442B542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33BCFB62-B388-4CF1-8DE9-31BFD442B542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33BCFB62-B388-4CF1-8DE9-31BFD442B542}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{33BCFB62-B388-4CF1-8DE9-31BFD442B542}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,8 +58,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AFD82E58-BF7A-4E2B-8EEB-B8CFAC949852} = {3CF22ED8-9E67-4634-A4D3-5C9D9EC037AC}
 		{9B0A6C38-CA39-4CB8-9B51-BCF57AF4065F} = {7681684B-7E43-44E0-B9F4-B12C5B570D9D}
-		{6A684042-607C-4268-B8A8-41A07BB44B9F} = {D7572ED7-8582-4ED0-AC37-A28F43D25689}
-		{160D4CBE-9148-4C62-B7FD-647C38C3F42F} = {D7572ED7-8582-4ED0-AC37-A28F43D25689}
-		{2E81B6ED-9F9B-4DBF-9509-4DEF4B6DFB6D} = {7681684B-7E43-44E0-B9F4-B12C5B570D9D}
+		{33BCFB62-B388-4CF1-8DE9-31BFD442B542} = {47E8175F-9610-44E5-B830-A16CC2C4CFF7}
 	EndGlobalSection
 EndGlobal
