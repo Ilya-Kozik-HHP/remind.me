@@ -14,7 +14,7 @@ namespace Remide.Me.Server.Controllers
             this.dataStorageProvider = dataStorageProvider;
         }
 
-        [HttpPost]
+        [HttpGet]
         [ActionName("get")]
         public async Task<IHttpActionResult> GetData(string id)
         {

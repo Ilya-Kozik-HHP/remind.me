@@ -42,7 +42,7 @@
     <Compile Include="Location.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserInfo.cs" />
+    <Compile Include="AccountInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Remide.Me.Common\Remide.Me.Common.csproj">

@@ -1,6 +1,6 @@
 ﻿namespace Remide.Me.Business.Entities
 {
-    public class UserInfo
+    public class AccountInfo
     {
         public string ID { get; set; }
 
@@ -8,6 +8,8 @@
 
         public string Password { get; set; }
 
-        public string Text { get; set; }
+        public string Email { get; set; }
+
+        public string Description { get; set; }
     }
 }
