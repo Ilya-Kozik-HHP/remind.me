@@ -6,8 +6,8 @@
                     {
                         id: 1,
                         name: "Home",
-                        latitude: 100,
-                        longitude: 100,
+                        latitude: 53.8233382,
+                        longitude: 27.7677942,
                         radius: 50
                     },
                 dataIds:
@@ -20,8 +20,8 @@
                     {
                         id: 1,
                         name: "Work",
-                        latitude: 120,
-                        longitude: 120,
+                        latitude: 53.9262755,
+                        longitude: 27.4386214,
                         radius: 50
                     },
                 dataIds:

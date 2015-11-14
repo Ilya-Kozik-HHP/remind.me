@@ -1,0 +1,9 @@
+﻿.main-map {
+    width: 100%;
+    height: 430px;
+}
+
+.main-map__item {
+    width: 100%;
+    height: 100%;
+}

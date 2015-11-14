@@ -3,13 +3,25 @@
 <head>
     <title>Remind.me</title>
     <meta charset="utf-8" />
-    <link href="../Common/css/reset.css" rel="stylesheet" />
+
+    <link href="../common/css/reset.css" rel="stylesheet" />
     <link href="main.css" rel="stylesheet" />
+    <link href="../common/components/main-header.css" rel="stylesheet" />
+    <link href="../common/components/main-map.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="main-header">
+        <div class="main-header__header">
+            Remind.me
+        </div>
+    </div>
+    <div class="main-map">
+        <div id="map" class="main-map__item"></div>
+    </div>
 
-
-    <script src="../Common/javascript/require.js"></script>
-    <script src="../Common/javascript/initialization.js"></script>
+    <script src="../common/javascript/require.js"></script>
+    <script src="../common/javascript/initialization.js"></script>
+    <script src="../main/main.js"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?&signed_in=true&callback=initMap"></script>-->
 </body>
 </html>
