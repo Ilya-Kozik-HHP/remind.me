@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remide.Me.Business.Entities", "Remide.Me.Business.Entities\Remide.Me.Business.Entities.csproj", "{AFD82E58-BF7A-4E2B-8EEB-B8CFAC949852}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{47E8175F-9610-44E5-B830-A16CC2C4CFF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{7681684B-7E43-44E0-B9F4-B12C5B570D9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remide.Me.Server", "Remide.Me.Server\Remide.Me.Server.csproj", "{9B0A6C38-CA39-4CB8-9B51-BCF57AF4065F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{3CF22ED8-9E67-4634-A4D3-5C9D9EC037AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFD82E58-BF7A-4E2B-8EEB-B8CFAC949852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD82E58-BF7A-4E2B-8EEB-B8CFAC949852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD82E58-BF7A-4E2B-8EEB-B8CFAC949852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD82E58-BF7A-4E2B-8EEB-B8CFAC949852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0A6C38-CA39-4CB8-9B51-BCF57AF4065F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0A6C38-CA39-4CB8-9B51-BCF57AF4065F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0A6C38-CA39-4CB8-9B51-BCF57AF4065F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0A6C38-CA39-4CB8-9B51-BCF57AF4065F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AFD82E58-BF7A-4E2B-8EEB-B8CFAC949852} = {3CF22ED8-9E67-4634-A4D3-5C9D9EC037AC}
+		{9B0A6C38-CA39-4CB8-9B51-BCF57AF4065F} = {7681684B-7E43-44E0-B9F4-B12C5B570D9D}
+	EndGlobalSection
+EndGlobal
