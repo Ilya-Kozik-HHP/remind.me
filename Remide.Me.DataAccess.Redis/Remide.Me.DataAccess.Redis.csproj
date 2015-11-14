@@ -52,8 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\RedisConfiguration.cs" />
     <Compile Include="KeyProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedisDataStorageProvider.cs" />
     <Compile Include="RedisLocationStorageProvider.cs" />
   </ItemGroup>
   <ItemGroup>

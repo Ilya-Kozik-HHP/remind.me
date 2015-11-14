@@ -4,21 +4,25 @@ using System.Threading.Tasks;
 
 using Remide.Me.Business.Entities;
 using Remide.Me.DataAccess.Infrastructure;
-
+using Remide.Me.DataAccess.Redis.Configuration;
 using StackExchange.Redis;
 
 namespace Remide.Me.DataAccess.Redis
 {
     public class RedisLocationStorageProvider : ILocationStorageProvider
     {
-        private const int DefaultDatabase = 0;
-        private const string DefaultConnectionString = "localhost:6379";
+        private readonly RedisConfiguration redisConfiguration;
+
+        public RedisLocationStorageProvider(RedisConfiguration redisConfiguration)
+        {
+            this.redisConfiguration = redisConfiguration;
+        }
 
         public async Task Save(string userGUID, List<Location> locations)
         {
-            using (var redisConnection = ConnectionMultiplexer.Connect(DefaultConnectionString))
+            using (var redisConnection = ConnectionMultiplexer.Connect(redisConfiguration.ConnectionString))
             {
-                IDatabase database = redisConnection.GetDatabase(DefaultDatabase);
+                IDatabase database = redisConnection.GetDatabase(redisConfiguration.Database);
 
                 string key = KeyProvider.GetUserLocationsKey(userGUID);
 
@@ -28,9 +32,9 @@ namespace Remide.Me.DataAccess.Redis
 
         public async Task<List<Location>> GetLocations(string userID)
         {
-            using (var redisConnection = ConnectionMultiplexer.Connect(DefaultConnectionString))
+            using (var redisConnection = ConnectionMultiplexer.Connect(redisConfiguration.ConnectionString))
             {
-                IDatabase database = redisConnection.GetDatabase(DefaultDatabase);
+                IDatabase database = redisConnection.GetDatabase(redisConfiguration.Database);
 
                 string key = KeyProvider.GetUserLocationsKey(userID);
 

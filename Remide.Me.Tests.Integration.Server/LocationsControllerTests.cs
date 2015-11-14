@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 
 using Remide.Me.Business.Entities;
 using Remide.Me.DataAccess.Redis;
+using Remide.Me.DataAccess.Redis.Configuration;
 using Remide.Me.Server.Controllers;
 using Remide.Me.Server.Insractructure.Requests;
 
@@ -14,12 +14,12 @@ namespace Remide.Me.Tests.Integration.Server
     [TestFixture]
     public class LocationsControllerTests
     {
-        private LocationsController controller;
+        private LocationController controller;
 
         [SetUp]
         public void Initialize()
         {
-            controller = new LocationsController(new RedisLocationStorageProvider());
+            controller = new LocationController(new RedisLocationStorageProvider(new RedisConfiguration()));
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace Remide.Me.Tests.Integration.Server
         {
             var request = new AddLocationsRequest
                           {
-                              UserID = Guid.NewGuid().ToString(),
+                              UserID = 20.ToString(),
                               Locations = new List<Location>
                                           {
                                               new Location
