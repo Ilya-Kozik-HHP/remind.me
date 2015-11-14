@@ -6,6 +6,7 @@ using Remide.Me.DataAccess.Redis;
 
 using Autofac;
 using Autofac.Integration.WebApi;
+using Remide.Me.DataAccess.Redis.Configuration;
 
 namespace Remide.Me.Server
 {
@@ -33,7 +34,10 @@ namespace Remide.Me.Server
 
         private void RegisterDataAccess(ContainerBuilder builder)
         {
+            builder.RegisterInstance(new RedisConfiguration());
+
             builder.RegisterType<RedisLocationStorageProvider>().As<ILocationStorageProvider>();
+            builder.RegisterType<RedisDataStorageProvider>().As<IDataStorageProvider>();
         }
     }
 }

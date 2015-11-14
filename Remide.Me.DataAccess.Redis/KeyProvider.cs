@@ -7,6 +7,8 @@ namespace Remide.Me.DataAccess.Redis
         private const string UserCommonKeyFormat = "users:{0}:common";
         private const string UserLocationsKeyFormat = "users:{0}:locations";
 
+        public const string UserLoginKey = "users:login";
+
         public static string GetUserCommonKey(params object[] items)
         {
             return String.Format(UserCommonKeyFormat, items);

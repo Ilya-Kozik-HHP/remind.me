@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 using Remide.Me.Business.Entities;
 using Remide.Me.DataAccess.Infrastructure;
+using Remide.Me.DataAccess.Redis.Configuration;
 
 using StackExchange.Redis;
 
@@ -11,16 +12,20 @@ namespace Remide.Me.DataAccess.Redis
 {
     public class RedisLocationStorageProvider : ILocationStorageProvider
     {
-        private const int DefaultDatabase = 0;
-        private const string DefaultConnectionString = "localhost:6379";
+        private readonly RedisConfiguration redisConfiguration;
 
-        public async Task Save(string userGUID, List<Location> locations)
+        public RedisLocationStorageProvider(RedisConfiguration redisConfiguration)
         {
-            using (var redisConnection = ConnectionMultiplexer.Connect(DefaultConnectionString))
-            {
-                IDatabase database = redisConnection.GetDatabase(DefaultDatabase);
+            this.redisConfiguration = redisConfiguration;
+        }
 
-                string key = KeyProvider.GetUserLocationsKey(userGUID);
+        public async Task Save(string userID, List<Location> locations)
+        {
+            using (var redisConnection = ConnectionMultiplexer.Connect(redisConfiguration.ConnectionString))
+            {
+                IDatabase database = redisConnection.GetDatabase(redisConfiguration.Database);
+
+                string key = KeyProvider.GetUserLocationsKey(userID);
 
                 await database.ListRightPushAsync(key, locations.Select(c=> (RedisValue)Jil.JSON.Serialize(c)).ToArray());
             }
@@ -28,9 +33,9 @@ namespace Remide.Me.DataAccess.Redis
 
         public async Task<List<Location>> GetLocations(string userID)
         {
-            using (var redisConnection = ConnectionMultiplexer.Connect(DefaultConnectionString))
+            using (var redisConnection = ConnectionMultiplexer.Connect(redisConfiguration.ConnectionString))
             {
-                IDatabase database = redisConnection.GetDatabase(DefaultDatabase);
+                IDatabase database = redisConnection.GetDatabase(redisConfiguration.Database);
 
                 string key = KeyProvider.GetUserLocationsKey(userID);
 

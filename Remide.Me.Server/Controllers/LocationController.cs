@@ -1,16 +1,18 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Http;
 
+using Remide.Me.Business.Entities;
 using Remide.Me.DataAccess.Infrastructure;
 using Remide.Me.Server.Insractructure.Requests;
 
 namespace Remide.Me.Server.Controllers
 {
-    public class LocationsController : ApiController
+    public class LocationController : ApiController
     {
         private readonly ILocationStorageProvider locationStorageProvider;
 
-        public LocationsController(ILocationStorageProvider locationStorageProvider)
+        public LocationController(ILocationStorageProvider locationStorageProvider)
         {
             this.locationStorageProvider = locationStorageProvider;
         }
@@ -25,11 +27,12 @@ namespace Remide.Me.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<IHttpActionResult> GetLocations(GetLocationsRequest request)
+        [ActionName("get")]
+        public async Task<IHttpActionResult> GetLocations(string id)
         {
-            await locationStorageProvider.GetLocations(request.UserID);
+            List<Location> locations = await locationStorageProvider.GetLocations(id);
 
-            return Ok();
+            return Ok(locations);
         }
     }
 }
