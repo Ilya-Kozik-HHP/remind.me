@@ -46,6 +46,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{442D325C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remide.Me.Tests.Integration.Server", "Remide.Me.Tests.Integration.Server\Remide.Me.Tests.Integration.Server.csproj", "{2AF229B9-7862-4C72-9289-D911745B1F69}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{3F44DBA5-9381-4B2B-B380-899C14C5D364}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remide.Me.Common", "Remide.Me.Common\Remide.Me.Common.csproj", "{8E2D6392-C143-4581-95D3-11B0C82D3F2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +84,10 @@ Global
 		{2AF229B9-7862-4C72-9289-D911745B1F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AF229B9-7862-4C72-9289-D911745B1F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AF229B9-7862-4C72-9289-D911745B1F69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E2D6392-C143-4581-95D3-11B0C82D3F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E2D6392-C143-4581-95D3-11B0C82D3F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E2D6392-C143-4581-95D3-11B0C82D3F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E2D6392-C143-4581-95D3-11B0C82D3F2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,5 +100,6 @@ Global
 		{160D4CBE-9148-4C62-B7FD-647C38C3F42F} = {B832490A-D040-40C0-89AC-CBDD5C0621FB}
 		{2E81B6ED-9F9B-4DBF-9509-4DEF4B6DFB6D} = {7681684B-7E43-44E0-B9F4-B12C5B570D9D}
 		{2AF229B9-7862-4C72-9289-D911745B1F69} = {442D325C-9E38-46D2-A57C-F5311F6FFCFE}
+		{8E2D6392-C143-4581-95D3-11B0C82D3F2C} = {3F44DBA5-9381-4B2B-B380-899C14C5D364}
 	EndGlobalSection
 EndGlobal

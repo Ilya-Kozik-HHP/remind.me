@@ -48,7 +48,31 @@ namespace Remide.Me.DataAccess.Redis
 
         public async Task<List<Data>> GetDataByLocation(string userID, double latitude, double longitude)
         {
-            throw new System.NotImplementedException();
+            List<Data> result = new List<Data>();
+
+            using (var redisConnection = ConnectionMultiplexer.Connect(redisConfiguration.ConnectionString))
+            {
+                IDatabase database = redisConnection.GetDatabase(redisConfiguration.Database);
+
+                string key = KeyProvider.GetUserLocationsKey(userID);
+
+                var items = await database.ListRangeAsync(key);
+
+                var allData = items.Select(c => Jil.JSON.Deserialize<Location>(c.ToString())).
+                    Where(c => c.Contains(latitude, longitude)).SelectMany(c => c.Data).ToList();
+
+                allData.ForEach(c =>
+                                {
+                                    var item = result.FirstOrDefault(f => f.ID == c.ID);
+                                    if (item == null)
+                                    {
+                                        result.Add(c);
+                                    }
+                                });
+
+            }
+
+            return result;
         }
     }
 }
